@@ -1,9 +1,9 @@
 # linux-server
 See project live at: link Notes for reviewer:
 
-public Ip: http://35.154.31.69/
+public Ip: http://13.126.72.147/
 SSH PORT: 2200
-Full project URL: http://ec2-35-154-31-69.ap-south-1.compute.amazonaws.com/
+Full project URL: ec2-13-126-72-147.ap-south-1.compute.amazonaws.com
 Tasks given and method for completion:
 
 Start a new Ubuntu Linux server instance on Amazon Lightsail.
@@ -16,13 +16,13 @@ Log in to your amazon Lightsail account.
 You will get your respective public IP address.
 Download the default key-pair and copy to /.ssh folder.
 Open your terminal and type in chmod 600 ~/.ssh/key.pem
-Now Use the command ssh -i ~/.ssh/key.pem ubuntu@35.154.31.69 to create the instance on your terminal
+Now Use the command ssh -i ~/.ssh/key.pem ubuntu@13.126.72.147 to create the instance on your terminal
 Create a new user named grader
 
 sudo adduser grader
 optional: install finger to check user has been added apt-get install finger
 finger grader
-Give the grader the permission to sudo
+Give the gra3der the permission to sudo
 
 sudo visudo
 inside the file add grader ALL=(ALL:ALL) ALL below the root user under "#User privilege specification"
@@ -51,13 +51,13 @@ You can add a password to use encase your keygen file gets compromised(you will 
 Change the SSH port number configuration in Amazon lightsail in networking tab to 2200.
 Add custom with port number as 2200 
 
-login into grader account using password set during user creation ssh -v grader@35.153.31.69 -p 2200
+login into grader account using password set during user creation ssh -v grader@13.126.72.147 -p 2200
 
 Make .ssh directorymkdir .ssh
 
 make file to store keytouch .ssh/authorized_keys
 
-On your local machine read contents of the public key cat .ssh/project5.pub
+On your local machine read contents of the public key cat .ssh/item-catalog.pub
 
 Copy the key and paste in the file you just created in grader nano .ssh/authorized_keys paste contents(ctr+v)
 
@@ -69,7 +69,7 @@ Change PasswordAuthentication from yes back to no. nano /etc/ssh/sshd_config
 
 save file(nano: ctrl+x, Y, Enter)
 
-login with key pair: ssh grader@35.153.31.69 -p 2200 -i ~/.ssh/project5
+login with key pair: ssh grader@13.126.72.147 -p 2200 -i ~/.ssh/item-catalog
 
 alternatively you can use a shorter method found here
 
@@ -134,8 +134,8 @@ Configure And Enable New Virtual Host
 Create host config file sudo nano /etc/apache2/sites-available/catalog.conf
 paste the following:
 <VirtualHost *:80>
-  ServerName 35.153.31.69
-  ServerAdmin admin@35.153.31.69
+  ServerName 13.126.72.147
+  ServerAdmin admin@13.126.72.147
   WSGIScriptAlias / /var/www/catalog/catalog.wsgi
   <Directory /var/www/catalog/catalog/>
       Order allow,deny
